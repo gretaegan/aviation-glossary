@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+        <div class="row">
+            <div class="register-container">
+                <h2 class="register-heading"> Register </h2>
+                <p class=register-info> New to aviation glossary? Use the form below to create an account and help other aviatiors by adding your own definitions. </p>
+            </div>
+            <!-- form -->
+                <form method="POST" action="{{ url_for('register') }}">
+                    <div class="mb-3">
+                    <label for="fname" class="form-label">Full Name</label>
+                    <input type="text" name="fname" class="form-control" id="fname">
+                    </div>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" name="username" class="form-control" id="username">
+                        </div>
+                    <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                    <label for="password" class="form-label"></label>Create Password</label>
+                    <input type="password" name="password" class="form-control" id="password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+    </div>
+</div>
+
+{% endblock %}
