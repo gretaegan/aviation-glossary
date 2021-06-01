@@ -1,5 +1,6 @@
 import os
-from flask import Flask
+from flask import (
+    Flask, flash, render_template, redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 if os.path.exists("env.py"):
@@ -18,8 +19,10 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-def test():
-    return "Hello World!"
+@app.route("/get_definitions")
+def get_definitions():
+    definitions = mongo.db.definitions.find()
+    return render_template("glossary.html", definitions=definitions)
 
 
 if __name__ == "__main__":
