@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_definitions")
 def get_definitions():
-    definitions = mongo.db.definitions.find()
+    definitions = list(mongo.db.definitions.find())
     return render_template("glossary.html", definitions=definitions)
 
 

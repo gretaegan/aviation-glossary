@@ -1,11 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
 
+  <section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 glossary-heading">
+                <h1> Glossary </h1>
+            </div>
+        </div>
+    </div>
 
     {% for definition in definitions %}
-       {{ definition.definition_name }}<br>
-       {{ definition.category_name }}<br>
-       {{ definition.definition_description }}<br>
-       {{ definition.definition_example }}<br>
+      <div class="accordion" id="def-accordian">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="def-heading">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                {{ definition.definition_name }}
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#def-accordian">
+            <div class="accordion-body">
+                <strong><em> Definition: </em>{{ definition.definition_description }}</strong>
+               <p>
+                <em> Category: </em> {{ definition.category_name }}<br>
+                <em> Example: </em>{{ definition.definition_example }}
+               </p>
+            </div>
+          </div>
+         </div>
+        </div>
+      </div>
     {% endfor %}
+  </section>
 {% endblock %}
