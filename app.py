@@ -45,6 +45,7 @@ def register():
 
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
+        redirect(url_for("dashboard", username=session["user"]))
     return render_template("register.html")
 
 
@@ -60,6 +61,8 @@ def login():
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome back, {}".format(
                         request.form.get("username")))
+                    redirect(url_for(
+                        "dashboard", username=session["user"]))
             else:
                 flash("Password username or password, please try again!")
                 return redirect(url_for("login"))
@@ -68,6 +71,13 @@ def login():
         flash("Password or username is incorrect. Please try again!")
         return redirect(url_for("login"))
     return render_template("login.html")
+
+
+@app.route("/dashboard<username>", methods=["GET", "POST"])
+def dashboard(username):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("dashboard.html", username=username)
 
 
 if __name__ == "__main__":
