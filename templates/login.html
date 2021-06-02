@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+        <div class="row">
+            <div class="register-container">
+                <h2 class="login-heading"> Log In </h2>
+            </div>
+            <!-- form -->
+                <form method="POST" action="{{ url_for('register') }}" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" name="username" class="form-control" id="username" minlength="4" maxlength="12" pattern="^[a-zA-Z0-9]{2,12}$" required>
+                        </div>
+                    <div class="mb-3">
+                    <label for="password" class="form-label"></label>Enter Password</label>
+                    <input type="password" name="password" class="form-control" id="password" minlength="4" maxlength="12" pattern="^[a-zA-Z0-9]{2,12}$" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Log In</button>
+                </form>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <p>
+                Don't have an account yet? <a href="{{ url_for('register') }}"> Register Here! </a>
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
