@@ -108,6 +108,13 @@ def add_definition():
     return render_template("add_definition.html", categories=categories)
 
 
+@app.route("/edit_definition/<definition_id>", methods=["GET", "POST"])
+def edit_definition(definition_id):
+    definition = mongo.db.definitions.find_one({"_id": ObjectId(definition_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("edit_definition.html", definition=definition, categories=categories)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
