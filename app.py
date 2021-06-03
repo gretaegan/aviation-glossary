@@ -92,6 +92,12 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/add_definition")
+def add_definition():
+    return render_template("add_definition.html")
+
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

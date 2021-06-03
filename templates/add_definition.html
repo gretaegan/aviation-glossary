@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+ <h3> Add a definition </h3>
+
+ <form method="POST" action="">
+    <div class="mb-3">
+      <label for="definitionName" class="form-label">Definition Name</label>
+      <input type="text" class="form-control" id="definitionName" aria-describedby="definitionName">
+    </div>
+    <div class="mb-3">
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Category</option>
+        <option value="1">Radio Telephony</option>
+        <option value="2">Meteorology</option>
+        <option value="3">General</option>
+      </select>
+    </div>
+    <div class="mb-3">
+        <label for="defDescription" class="form-label">Definition description</label>
+        <textarea class="form-control" id="defDescription" rows="3"></textarea>
+      </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+{% endblock %}

@@ -9,8 +9,8 @@
             </div>
         </div>
     </div>
-
-    {% for definition in definitions %}
+    <div class="accordian-container">
+      {% for definition in definitions %}
       <div class="accordion" id="def-accordian">
         <div class="accordion-item">
           <h2 class="accordion-header" id="def-heading">
@@ -31,5 +31,6 @@
         </div>
       </div>
     {% endfor %}
+    </div>
   </section>
 {% endblock %}
