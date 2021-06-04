@@ -104,8 +104,7 @@ def add_definition():
             "category_name": request.form.get("category_name"),
             "definition_name": request.form.get("definition_name"),
             "definition_description": request.form.get(
-                "definition_description"),
-            "created_by": session["user"]
+                "definition_description")
         }
         mongo.db.definitions.insert_one(definition)
         flash("Definition successfully added!")
