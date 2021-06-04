@@ -12,19 +12,21 @@ body {
 }
 
 .navbar-brand {
-    font-size: 36px;
+    font-size: 30px;
     color: #fafafa;
 }
 
 .nav-link {
     color: #fafafa;
+    font-size: 24px;
 }
 
 
 
+/*----- Register */
 
 .register-container {
-    height: 100px;
+    height: 200px;
 }
 
 .register-heading {
@@ -32,13 +34,15 @@ body {
     padding-top: 40px;
     padding-bottom: 20px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 
 .register-info {
     text-align: center;
     padding-bottom: 20px;
 }
+
+/*-----Glossary */
 
 .glossary-heading {
     padding-top: 60px;
@@ -51,4 +55,12 @@ body {
 .glossary-card {
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+/*-----Footer */
+
+.footer {
+    background-color:rgba(29, 186, 238, 0.74);
+    color: #fafafa;
+    height: 80px;
 }

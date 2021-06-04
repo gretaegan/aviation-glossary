@@ -6,7 +6,7 @@
  <form method="POST" action="{{ url_for('add_definition') }}" class="needs-validation" novalidate>
     <div class="mb-3">
       <label for="definition_name" class="form-label">Definition Name</label>
-      <input type="text" class="form-control" name="definition_name" id="definition_name" minlength="2" maxlength="50" aria-describedby="definitionName" required>
+      <input type="text" class="form-control" name="definition_name" id="definition_name" minlength="2" maxlength="100" aria-describedby="definitionName" required>
     </div>
     <div class="mb-3">
       <select class="form-select validate" id="category_name" aria-label="select">
@@ -19,7 +19,7 @@
     </div>
     <div class="mb-3">
         <label for="def_description" class="form-label">Definition description</label>
-        <textarea class="form-control" name="def_description" id="def_description" minlength="3" maxlength="60" rows="3" required></textarea>
+        <textarea class="form-control" name="def_description" id="def_description" minlength="3" maxlength="100" rows="3" required></textarea>
       </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

@@ -61,7 +61,7 @@ def login():
                         flash("Welcome, {}".format(
                             request.form.get("username")))
                         return redirect(url_for(
-                            "profile", username=session["user"]))
+                            "dashboard", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -92,6 +92,11 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/homepage")
+def homepage():
+    return render_template("homepage.html")
+
+
 @app.route("/add_definition", methods=["GET", "POST"])
 def add_definition():
     if request.method == "POST":
@@ -99,7 +104,8 @@ def add_definition():
             "category_name": request.form.get("category_name"),
             "definition_name": request.form.get("definition_name"),
             "definition_description": request.form.get(
-                "definition_description")
+                "definition_description"),
+            "created_by": session["user"]
         }
         mongo.db.definitions.insert_one(definition)
         flash("Definition successfully added!")
@@ -110,9 +116,11 @@ def add_definition():
 
 @app.route("/edit_definition/<definition_id>", methods=["GET", "POST"])
 def edit_definition(definition_id):
-    definition = mongo.db.definitions.find_one({"_id": ObjectId(definition_id)})
+    definition = mongo.db.definitions.find_one(
+        {"_id": ObjectId(definition_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("edit_definition.html", definition=definition, categories=categories)
+    return render_template(
+        "edit_definition.html", definition=definition, categories=categories)
 
 
 if __name__ == "__main__":
