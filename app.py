@@ -104,7 +104,8 @@ def add_definition():
             "category_name": request.form.get("category_name"),
             "definition_name": request.form.get("definition_name"),
             "definition_description": request.form.get(
-                "definition_description")
+                "definition_description"),
+            "created_by": session["user"]
         }
         mongo.db.definitions.insert_one(definition)
         flash("Definition successfully added!")
@@ -115,6 +116,17 @@ def add_definition():
 
 @app.route("/edit_definition/<definition_id>", methods=["GET", "POST"])
 def edit_definition(definition_id):
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "definition_name": request.form.get("definition_name"),
+            "definition_description": request.form.get(
+                "definition_description"),
+            "created_by": session["user"]
+        }
+        mongo.db.definitions.update({"_id": ObjectId(definition_id)}, submit)
+        flash("Definition successfully edited!")
+
     definition = mongo.db.definitions.find_one(
         {"_id": ObjectId(definition_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)

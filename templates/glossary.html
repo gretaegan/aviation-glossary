@@ -33,8 +33,10 @@
             </em>
             {{ definition.definition_example }}
           </p>
-          <a href="{{ url_for('edit_definition', definition_id=definition._id) }}" class="btn btn-primary">Edit</a>
-          <a href="#" class="btn btn-primary">Delete</a>
+          {% if session.user|lower == definition.created_by|lower %}
+              <a href="{{ url_for('edit_definition', definition_id=definition._id) }}" class="btn btn-primary">Edit</a>
+              <a href="#" class="btn btn-primary">Delete</a>
+          {% endif %}
         </div>
       {% endfor %}
     </div>
