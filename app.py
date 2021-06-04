@@ -26,6 +26,14 @@ def get_definitions():
     return render_template("glossary.html", definitions=definitions)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    definitions = list(
+        mongo.db.definitions.find({"$text": {"$search": query}}))
+    return render_template("glossary.html", definitions=definitions)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
