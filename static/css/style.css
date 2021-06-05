@@ -2,14 +2,16 @@
 
 body {
     font-family: 'Raleway',sans-serif;
+    
 }
 
 /*-----Navbar*/
 
 .navbar-custom {
-    background-color: rgba(29, 186, 238, 0.74);
+    background-color: #27285C;
     height: 100px;
 }
+
 
 .navbar-brand {
     font-size: 30px;
@@ -21,12 +23,25 @@ body {
     font-size: 24px;
 }
 
+/*-----Home Page*/
+
+.homepage-information {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.info-heading {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 
 
 /*----- Register */
 
 .register-container {
     height: 200px;
+    padding-bottom: 36px;
 }
 
 .register-heading {
@@ -42,6 +57,11 @@ body {
     padding-bottom: 20px;
 }
 
+.btn-register-page {
+    
+    margin-bottom: 20px;
+}
+
 /*-----Glossary */
 
 .glossary-heading {
@@ -55,12 +75,26 @@ body {
 .glossary-card {
     padding-top: 20px;
     padding-bottom: 20px;
+    max-width: 900px;
 }
+
+.search-box {
+    justify-content: center;
+}
+
+/*--- Log In --*/
+
+.login-container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
 
 /*-----Footer */
 
 .footer {
-    background-color:rgba(29, 186, 238, 0.74);
+    background-color:#27285C;
     color: #fafafa;
-    height: 80px;
+    height: 100px;
+    bottom: 0;
 }
