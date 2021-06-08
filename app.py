@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 
 @app.route("/")
 @app.route("/homepage")
-def home():
+def homepage():
     return render_template("homepage.html")
 
 
@@ -122,7 +122,7 @@ def add_definition():
         }
         mongo.db.definitions.insert_one(definition)
         flash("Definition successfully added!")
-        return redirect(url_for("get_definitions"))
+        return redirect(url_for("glossary"))
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_definition.html", categories=categories)
 
@@ -150,8 +150,8 @@ def edit_definition(definition_id):
 @app.route("/delete_definition/<definition_id>")
 def delete_definition(definition_id):
     mongo.db.definitions.remove({"_id": ObjectId(definition_id)})
-    flash("Definition deleted")
-    return redirect(url_for("get_definitions"))
+    flash("Definition successfully deleted!")
+    return redirect(url_for("glossary"))
 
 
 @app.errorhandler(404)
