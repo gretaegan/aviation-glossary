@@ -2,7 +2,6 @@ import os
 from flask import (
     Flask, flash, render_template, redirect, request, session, url_for)
 from flask_pymongo import PyMongo
-from flask_paginate import Pagination, get_page_args
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -23,7 +22,12 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_definitions")
 def get_definitions():
-    definitions = list(mongo.db.definitions.find())
+    query = request.args.get("query")
+    if query:
+        definitions = list(
+            mongo.db.definitions.find({"$text": {"$search": query}}))
+    else:
+        definitions = list(mongo.db.definitions.find().sort("_id", -1))
     return render_template("glossary.html", definitions=definitions)
 
 
