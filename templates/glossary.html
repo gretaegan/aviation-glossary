@@ -33,18 +33,14 @@
 <div class="container">
   <div class="glossary-card">
         {% for definition in definitions %}
-        <h5 class="card-header"><a href="#collapse" class="btn" data-bs-toggle="collapse" role="button">
-          <i class="fas fa-caret-down"></i>
-        </a>
-            {{ definition.definition_name }}
-          <div class="card-body collapse" id="collapse">
+        <h5 class="card-header">
+            {{ definition.definition_name }}</h5>
+          <div class="card-body">
             <h5 class="card-title">
-              <strong>
                 <em>
                   Definition:
                 </em>
                 {{ definition.definition_description }}
-              </strong>
             </h5>
             <p class="card-text">
               <em>

@@ -123,19 +123,17 @@ body {
 .glossary-card {
     padding-top: 20px;
     padding-bottom: 20px;
-    max-width: 50%;
     margin: auto;
     font-family:Arial, Helvetica, sans-serif;
-    font-size: 12px;
 }
 
 
 
 .search-box {
-    margin-left: 360px;
-    max-width: 60%;
     border: solid 3px #9bd3dd;
-    padding: 20 20 20 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -178,6 +176,4 @@ body {
 .footer {
     background-color:#021752;
     color: #9bd3dd;
-    height: 100px;
-    bottom: 0;
 }
