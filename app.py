@@ -20,8 +20,8 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("homepage")
-def homepage():
+@app.route("/homepage")
+def home():
     return render_template("homepage.html")
 
 
@@ -108,11 +108,6 @@ def logout():
     flash("You are now logged out")
     session.pop("user")
     return redirect(url_for("login"))
-
-
-@app.route("/homepage")
-def home():
-    return render_template("homepage.html")
 
 
 @app.route("/add_definition", methods=["GET", "POST"])
