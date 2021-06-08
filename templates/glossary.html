@@ -16,13 +16,13 @@
 <div class="container">
   <div class="row">
     <div class="col col-sm-9">
-      <form action="{{ url_for('get_definitions') }}" method="GET" class="search-box">
+      <form action="{{ url_for('glossary') }}" method="GET" class="search-box">
         <div class="form-row">
           <div class="form-group">
             <label for="query">Search</label>
             <input type=text" name="query" class="form-control form-box" id="query" placeholder="Word or definition">
             <button type="submit" class="btn btn-info btn-search">Search</button>
-            <a href="{{ url_for('get_definitions') }}" class="btn btn-info"> Reset</a>
+            <a href="{{ url_for('glossary') }}" class="btn btn-info"> Reset</a>
           </div>
     </div>
     </div>

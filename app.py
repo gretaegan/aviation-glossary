@@ -20,8 +20,13 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_definitions")
-def get_definitions():
+@app.route("homepage")
+def homepage():
+    return render_template("homepage.html")
+
+
+@app.route("/glossary")
+def glossary():
     query = request.args.get("query")
     if query:
         definitions = list(
@@ -106,7 +111,7 @@ def logout():
 
 
 @app.route("/homepage")
-def homepage():
+def home():
     return render_template("homepage.html")
 
 
