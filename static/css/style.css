@@ -35,7 +35,7 @@ body {
 }
 
 
-.btn:hover {
+.btn-hover {
     background-color: #9bd3dd;
 }
 
@@ -162,6 +162,10 @@ body {
 
 /*-----User Dashboard*/
 
+.new-hr {
+    border: #24dafa solid 3px;
+}
+
 .profile-container {
     display: flex;
     align-items: center;
@@ -170,6 +174,38 @@ body {
     padding-bottom: 32px;
 }
 
+.username-profile {
+    padding-top: 60px;
+    padding-bottom: 30px;
+    font-family: 'Raleway',sans-serif;
+    margin: auto;
+    text-align: center;
+}
+
+.username-heading {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.icon-fa {
+    color: #9bd3dd;
+    padding-top: 38px;
+    padding-bottom: 38px;
+}
+
+.icon-text {
+    text-align: center;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 48px;
+}
+
+.icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /*-----Footer */
 

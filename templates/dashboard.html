@@ -1,15 +1,51 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- Username -->
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <div class="profile-container">
-                <h2>
+                <h2 class="username-profile">
                     {{ username }}'s Dashboard
                 </h2>
+                <hr class="new-hr">
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h3 class="username-heading"> What do you want to do? </h3>
             </div>
         </div>
     </div>
 </div>
+
+<!-- User options -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="icon-box">
+                <i class="fas fa-plane fa-5x icon-fa"></i>
+            </div>
+            <h4 class="icon-text">
+                <a href="" class="btn btn-hover"> See what you've added</a>
+            </h4>
+        </div>
+        <div class="col-md-4">
+            <div class="icon-box">
+                <i class="fas fa-edit fa-5x icon-fa"></i>
+            </div>
+            <h4 class="icon-text">
+                <a href="{{ url_for('add_definition') }}" class="btn btn-hover">Add or Edit </a>
+            </h4>
+        </div>
+        <div class="col-md-4">
+            <div class="icon-box">
+                <i class="fas fa-search fa-5x icon-fa"></i>
+            </div>
+            <h4 class="icon-text">
+                <a href="{{ url_for('glossary') }}" class="btn btn-hover">Search the Glossary </a>
+            </h4>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
