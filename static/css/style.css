@@ -1,26 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Raleway:ital,wght@0,300;0,400;0,500;1,200;1,400&display=swap');
 
 body {
+
     font-family: 'Raleway',sans-serif;
-    
-}
+    padding-top: 60px;
+  }
+
+  @media (max-width: 979px) {
+    body {
+      padding-top: 0px;
+    }
+  }
 
 /*-----Navbar*/
 
 .navbar-custom {
-    background-color: #27285C;
-    height: 100px;
+    background-color: #3c5291;
+    height: 80px;
 }
 
 
 .navbar-brand {
-    font-size: 30px;
+    font-size: 24px;
+    color: #9bd3dd;
+}
+
+.navbar-brand:hover {
     color: #fafafa;
+    text-decoration: underline;
 }
 
 .nav-link {
     color: #fafafa;
-    font-size: 24px;
+    font-size: 20px;
+}
+
+.btn-outline {
+    border-color: hsl(224, 91%, 67%);
+}
+
+.btn:hover {
+    background-color: #9bd3dd;
 }
 
 /*-----Home Page*/
@@ -34,6 +54,17 @@ body {
 .info-heading {
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+.carousel-img {
+    width: 100%;
+    height: 800px;
+    object-fit : cover;
+}
+
+.carousel-caption {
+  background-color: rgba(0,0,0,0.6);
+  z-index: 2;
 }
 
 
@@ -58,7 +89,6 @@ body {
 }
 
 .btn-register-page {
-    
     margin-bottom: 20px;
 }
 
@@ -72,15 +102,44 @@ body {
     letter-spacing: 3px;
 }
 
+.glossary-heading p {
+    letter-spacing: 2px;
+    text-transform: none;
+}
+
 .glossary-card {
     padding-top: 20px;
     padding-bottom: 20px;
-    max-width: 900px;
+    max-width: 50%;
+    margin: auto;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 12px;
 }
 
+
+
 .search-box {
+    margin-left: 360px;
+    max-width: 60%;
+    border: solid 3px #9bd3dd;
+    padding: 20 20 20 20;
+}
+
+
+.page-box {
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
+
+.end-info {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+
 
 /*--- Log In --*/
 
@@ -90,11 +149,22 @@ body {
 }
 
 
+/*-----User Dashboard*/
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 32px;
+}
+
+
 /*-----Footer */
 
 .footer {
-    background-color:#27285C;
-    color: #fafafa;
+    background-color:#3c5291;
+    color: #9bd3dd;
     height: 100px;
     bottom: 0;
 }

@@ -2,6 +2,7 @@ import os
 from flask import (
     Flask, flash, render_template, redirect, request, session, url_for)
 from flask_pymongo import PyMongo
+from flask_paginate import Pagination, get_page_args
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -22,8 +23,17 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_definitions")
 def get_definitions():
-    definitions = list(mongo.db.definitions.find())
-    return render_template("glossary.html", definitions=definitions)
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page',
+        offset_parameter='offset')
+    per_page = 6
+    offset = (page - 1) * 6
+    total = mongo.db.definitions.find().count()
+    definition = list(mongo.db.recipes.find())
+    definition_paginated = definition[offset: offset + per_page]
+    pagination = Pagination(page=page, per_page=per_page, total=total, css_framework='bootstrap5')
+    # definitions = list(mongo.db.definitions.find())
+    return render_template("glossary.html", definitions=definition_paginated, page=page, per_page=per_page, pagination=pagination)
 
 
 @app.route("/search", methods=["GET", "POST"])

@@ -7,31 +7,36 @@
         <div class="row">
             <div class="col-sm-12 glossary-heading">
                 <h1> Glossary </h1>
+                <p> Search for a word below:</p>
             </div>
         </div>
     </div>
+
 <!-- search box -->
 <div class="container">
-  <div class="row justify-content-md-center">
-    <div class="col col-lg-12">
+  <div class="row">
+    <div class="col col-sm-9">
       <form action="{{ url_for('search') }}" method="post" class="search-box">
         <div class="form-row">
           <div class="form-group">
             <label for="query">Search</label>
-            <input type=text" name="query" class="form-control" id="query" placeholder="Word or definition">
+            <input type=text" name="query" class="form-control form-box" id="query" placeholder="Word or definition">
             <button type="submit" class="btn btn-info btn-search">Search</button>
             <a href="{{ url_for('get_definitions') }}" class="btn btn-info"> Reset</a>
           </div>
     </div>
     </div>
   </div>
-  </div>
-</div>
+
+  
 <!-- start of glossary -->
     <div class="glossary-card">
       {% for definition in definitions %}
-      <h5 class="card-header">{{ definition.definition_name }}</h5>
-        <div class="card-body">
+      <h5 class="card-header"><a href="#collapse" class="btn" data-bs-toggle="collapse" role="button">
+        <i class="fas fa-caret-down"></i>
+      </a>
+          {{ definition.definition_name }}
+        <div class="card-body collapse" id="collapse">
           <h5 class="card-title">
             <strong>
               <em>
@@ -59,5 +64,17 @@
         </div>
       {% endfor %}
     </div>
-  </section>
+
+<!-- end of page info -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 end-info">
+      <p> Want to add a definition or phrase of your own? <br>
+        Click to 
+      <a href="{{ url_for('login') }}" class="btn btn-custom">Login</a> or
+      <a href="{{ url_for('register') }}" class="btn btn-custom">Register</a>! </p>
+    </div>
+  </div>
+</div>
+</section>
 {% endblock %}
