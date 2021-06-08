@@ -30,40 +30,42 @@
 
   
 <!-- start of glossary -->
-    <div class="glossary-card">
-      {% for definition in definitions %}
-      <h5 class="card-header"><a href="#collapse" class="btn" data-bs-toggle="collapse" role="button">
-        <i class="fas fa-caret-down"></i>
-      </a>
-          {{ definition.definition_name }}
-        <div class="card-body collapse" id="collapse">
-          <h5 class="card-title">
-            <strong>
+<div class="container">
+  <div class="glossary-card">
+        {% for definition in definitions %}
+        <h5 class="card-header"><a href="#collapse" class="btn" data-bs-toggle="collapse" role="button">
+          <i class="fas fa-caret-down"></i>
+        </a>
+            {{ definition.definition_name }}
+          <div class="card-body collapse" id="collapse">
+            <h5 class="card-title">
+              <strong>
+                <em>
+                  Definition:
+                </em>
+                {{ definition.definition_description }}
+              </strong>
+            </h5>
+            <p class="card-text">
               <em>
-                Definition:
+                Category:
               </em>
-              {{ definition.definition_description }}
-            </strong>
-          </h5>
-          <p class="card-text">
-            <em>
-              Category:
-            </em>
-            {{ definition.category_name }}
-          </p>
-          <p class="card-text">
-            <em>
-              Example:
-            </em>
-            {{ definition.definition_example }}
-          </p>
-          {% if session.user|lower == definition.created_by|lower %}
-              <a href="{{ url_for('edit_definition', definition_id=definition._id) }}" class="btn btn-info btn-edit">Edit</a>
-              <a href="{{ url_for('delete_definition', definition_id=definition._id) }}" class="btn btn-info btn-delete">Delete</a>
-          {% endif %}
-        </div>
-      {% endfor %}
-    </div>
+              {{ definition.category_name }}
+            </p>
+            <p class="card-text">
+              <em>
+                Example:
+              </em>
+              {{ definition.definition_example }}
+            </p>
+            {% if session.user|lower == definition.created_by|lower %}
+                <a href="{{ url_for('edit_definition', definition_id=definition._id) }}" class="btn btn-info btn-edit">Edit</a>
+                <a href="{{ url_for('delete_definition', definition_id=definition._id) }}" class="btn btn-info btn-delete">Delete</a>
+            {% endif %}
+          </div>
+        {% endfor %}
+  </div>
+</div>
 
 <!-- end of page info -->
 <div class="container">
