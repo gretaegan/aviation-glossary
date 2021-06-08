@@ -39,6 +39,11 @@ body {
     background-color: #9bd3dd;
 }
 
+.btn-hover:hover {
+    background-color: #12d6f8;
+    color: #fafafa;
+}
+
 /*-----Home Page*/
 
 .homepage-information {
@@ -130,7 +135,6 @@ body {
 
 
 .search-box {
-    border: solid 3px #9bd3dd;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -157,6 +161,14 @@ body {
 .login-container {
     padding-top: 60px;
     padding-bottom: 60px;
+}
+
+.login-heading {
+    text-align: center;
+}
+
+.register-reminder {
+    text-align: center;
 }
 
 
@@ -188,10 +200,19 @@ body {
     padding-bottom: 20px;
 }
 
+.username-box {
+    background-color: #9bd3dd;
+    text-shadow: 2px;
+}
+
 .icon-fa {
     color: #9bd3dd;
     padding-top: 38px;
     padding-bottom: 38px;
+}
+
+.icon-fa:hover {
+    color: #12d6f8;
 }
 
 .icon-text {
@@ -206,6 +227,36 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+/*-----Add / Edit  */
+
+.form-container {
+    justify-content: center;
+    align-items: center;
+}
+
+.add-header {
+    text-align: center;
+    padding-top: 28px;
+    padding-bottom: 22px;
+}
+
+.add-text {
+    text-align: center;
+    padding-bottom: 32px;
+}
+
+/*-----Flash Messages */
+
+.flash-container {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    height: 80px;
+    font-size: 42px;
+    font-family: 'Raleway',sans-serif;
+    text-align: center;
+}
+
 
 /*-----Footer */
 

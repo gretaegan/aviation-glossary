@@ -14,3 +14,9 @@
     }, false);
   })();
 
+
+  // code to trigger alert message
+
+  function myAlert() {
+    alert("Congratulations! You've added a word to the glossary")
+  }
