@@ -1,6 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- flash messages -->
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 flash-container">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                       {% for message in messages %}
+                          <div class="message-row">
+                              {{ message }}
+                          </div>
+                       {% endfor %}
+                    {% endif %} 
+                {% endwith %}
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Username -->
 <div class="container">
     <div class="row">

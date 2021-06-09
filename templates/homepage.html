@@ -1,62 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-
-<!-- Caption -->
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-12">
-    </div>
-  </div>
-
-</div>
-
-<!-- carousel -->
+<!-- Hero image and caption -->
 <div class="container-fluid">
   <div class="row g-0">
-    <div class="col-12 carousel-container">
-      <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-heading">
-          <h1> Aviation Glossary </h1>
-          <hr>
-          <p> Some text here</p>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="{{ url_for('static', filename='images/night.jpg') }}" class="w-100 carousel-img" height="300" alt="night take off">
-            <div class="carousel-caption d-none d-md-block">
-              <h5></h5>
-              <p></p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="{{ url_for('static', filename='images/EI.jpg') }}" class="d-block w-100 carousel-img" alt="airbus low pass">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>  </h5>
-              <p></p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="{{ url_for('static', filename='images/kaitak.jpg') }}" class="d-block w-100 carousel-img" alt="kai tak">
-            <div class="carousel-caption d-none d-md-block">
-              <h5></h5>
-              <p></p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+    <div class="col-12 hero-image-container">
+      <div class="hero-text">
+        <h1> Aviation Glossary </h1><br>
+        <hr>
+        <p> An online tool for phraseology and abbreviations </p>
       </div>
     </div>
   </div>
@@ -68,7 +20,7 @@
 <section>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-12 homepage-information">
+      <div class="col-sm-6 col-md-6 col-lg-6 homepage-information">
         <h3 class="info-heading"> What is Aviation Glossary ?</h3>
         <hr>
         <p> Designed by pilots, for pilots, Aviation Glossary is a compact and convienient way for aviators and aviation geeks alike to access our dictionary of phraseology and abbreviations commonly 
@@ -76,6 +28,9 @@
             Want to sign up and start adding your own av-phrases into the glossary?<br> Check out our <a href="{{ url_for('register') }}" class="btn btn-info"> Register</a> page to
             sign up.
         </p>
+      </div>
+      <div class="col-sm-6 col-md-6 col-lg-6">
+        glossary carousel will go here 
       </div>
     </div>
   </div>
