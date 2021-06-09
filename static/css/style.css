@@ -34,6 +34,11 @@ body {
     font-size: 20px;
 }
 
+.nav-link:hover {
+    color: #fafafa;
+    text-decoration: underline;
+}
+
 
 .btn-hover {
     background-color: #9bd3dd;
@@ -47,7 +52,7 @@ body {
 /*-----Home Page*/
 
 .homepage-information {
-    padding-top: 40px;
+    padding-top: 22px;
     padding-bottom: 40px;
     text-align: center;
 }
@@ -58,7 +63,7 @@ body {
 }
 
 .hero-image-container {
-    background-image: url("../images/night.jpg");
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../images/night.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -66,6 +71,7 @@ body {
     width: 100%;
     padding-right: 0;
     padding-left: 0;
+    position: relative;
 }
 
 .hero-text {
@@ -74,10 +80,16 @@ body {
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
+    color: hsl(189, 96%, 67%);
+    position: absolute;
+    top: 31%;
+    left: 23%;
 }
 
 .hero-text h1 {
     letter-spacing: 3px;
+    font-size: 52px;
+    font-weight: 200;
 }
 
 /*----- Register */
