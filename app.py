@@ -53,7 +53,7 @@ def register():
 
         if existing_user:
             flash("Username already exists")
-            return redirect(url_for("register"))
+            return redirect(url_for("login"))
 
         register = {
             "username": request.form.get("username").lower(),
@@ -81,13 +81,11 @@ def login():
                         return redirect(url_for(
                             "dashboard", username=session["user"]))
             else:
-                # invalid password match
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
         else:
-            # username doesn't exist
-            flash("Incorrect Username and/or Password")
+            flash("Username doesn't exist")
             return redirect(url_for("login"))
 
     return render_template("login.html")
@@ -113,6 +111,14 @@ def logout():
 @app.route("/add_definition", methods=["GET", "POST"])
 def add_definition():
     if request.method == "POST":
+        # check if definition already exists
+        existing_definition = mongo.db.definitions.find_one(
+            {"definition": request.form.get("definition")}
+        )
+        if existing_definition:
+            flash("This definition is already listed!")
+            return redirect(url_for("add_definition"))
+
         definition = {
             "category_name": request.form.get("category_name"),
             "definition_name": request.form.get("definition_name"),
@@ -127,6 +133,7 @@ def add_definition():
     return render_template("add_definition.html", categories=categories)
 
 
+# To edit a definition in the glossary
 @app.route("/edit_definition/<definition_id>", methods=["GET", "POST"])
 def edit_definition(definition_id):
     if request.method == "POST":
