@@ -161,6 +161,12 @@ def delete_definition(definition_id):
     return redirect(url_for("glossary"))
 
 
+@app.route("/get_categories")
+def get_categories():
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template("add_definition.html", categories=categories)
+
+
 @app.errorhandler(404)
 def not_found(error):
     return render_template('404.html', error=error), 404
