@@ -24,7 +24,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col-lg-12">
       <h3 class="add-header"> Want to add to the Glossary? <i class="fas fa-edit icon-fa"></i> </h3>
       <p class="add-text">
         Fill in the form below to add your own definition to the glossary. 
@@ -33,27 +33,37 @@
   </div>
 </div>
 
-<div class="form-container">
-  <form method="POST" action="{{ url_for('add_definition') }}" class="needs-validation" novalidate>
-    <div class="mb-3">
-      <label for="definition_name" class="form-label">Definition Name</label>
-      <input type="text" class="form-control" name="definition_name" id="definition_name" minlength="2" maxlength="100" aria-describedby="definitionName" required>
+<div class="row">
+  <div class="col-lg-3">
+
+  </div>
+  <div class="col-lg-6">
+    <div class="form-container">
+      <form method="POST" action="{{ url_for('add_definition') }}" class="needs-validation" novalidate>
+        <div class="mb-3">
+          <label for="definition_name" class="form-label">Definition Name</label>
+          <input type="text" class="form-control" name="definition_name" id="definition_name" minlength="2" maxlength="100" aria-describedby="definitionName" required>
+        </div>
+        <div class="mb-3">
+          <select class="form-select validate" id="category_name" aria-label="select">
+              <label for="category_name" id="category_name" name="category_name"">Category</label>
+            <option selected> Pick a category </option>
+            {% for category in categories %}
+                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="mb-3">
+            <label for="definition_description" class="form-label">Definition description</label>
+            <textarea class="form-control" name="definition_description" id="definition_description" minlength="3" maxlength="100" rows="3" required></textarea>
+          </div>
+        <button type="submit" class="btn btn-hover">Submit</button>
+    </form>
     </div>
-    <div class="mb-3">
-      <select class="form-select validate" id="category_name" aria-label="select">
-          <label for="category_name" id="category_name" name="category_name"">Category</label>
-        <option selected> Pick a category </option>
-        {% for category in categories %}
-            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-        {% endfor %}
-      </select>
-    </div>
-    <div class="mb-3">
-        <label for="definition_description" class="form-label">Definition description</label>
-        <textarea class="form-control" name="definition_description" id="definition_description" minlength="3" maxlength="100" rows="3" required></textarea>
-      </div>
-    <button type="submit" class="btn btn-hover">Submit</button>
-</form>
+  </div>
+  <div class="col-lg-3">
+    
+  </div>
 </div>
 
 

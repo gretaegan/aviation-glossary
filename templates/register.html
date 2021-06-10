@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
+
+<section class="register-page">
+
 <!-- flash messages -->
 <section>
     <div class="container">
@@ -23,12 +26,11 @@
         <div class="row">
             <div class="register-container">
                 <h2 class="register-heading"> Register </h2>
-                <hr class="new-hr">
                 <p class=register-info> New to aviation glossary? Use the form below to create an account and help other aviators by adding your own definitions.</p>
                 <hr>
             </div>
             <!-- form -->
-                <form method="POST" action="{{ url_for('register') }}" class="needs-validation" novalidate>
+                <form method="POST" action="{{ url_for('register') }}" class="needs-validation register-form" novalidate>
                     <div class="mb-3">
                     <label for="fname" class="form-label">Full Name</label>
                     <input type="text" name="fname" class="form-control" id="fname">
@@ -45,5 +47,7 @@
                 </form>
     </div>
 </div>
+
+</section>
 
 {% endblock %}
