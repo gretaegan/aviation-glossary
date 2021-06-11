@@ -21,48 +21,55 @@
       <div class="col-sm-6 col-md-6 col-lg-6 homepage-information">
         <h3 class="info-heading"> What is Aviation Glossary ?</h3>
         <hr>
-        <p> Designed by pilots, for pilots, Aviation Glossary is a compact and convienient way for aviators and aviation geeks alike to access our dictionary of phraseology and abbreviations commonly 
+        <p class="info-text"> Designed by pilots, for pilots, Aviation Glossary is a compact and convienient way for aviators and aviation geeks alike to access our dictionary of phraseology and abbreviations commonly 
             used. Organized into three categories: Meterology, Radio Telephony(RT) and General, our database is constantly being updated and added to by our users.<br>
-            Want to sign up and start adding your own av-phrases into the glossary?<br> Check out our <a href="{{ url_for('register') }}" class="btn btn-info"> Register</a> page to
-            sign up.
+            As a user, you can add definitions, edit or delete anything you've added, and access your user Dashboard..
         </p>
+        <h5 class="heading-options"> Ready to start adding av-phrases to the glossary? </h5>
+        <div class="info-page-options">
+          <a href="{{ url_for('register') }}" class="btn btn-hover btn-lg btn-info-page"> Sign Up</a>
+          <a href="{{ url_for('login') }}" class="btn btn-hover btn-lg btn-info-page"> Log In </a>
+        </div>
       </div>
       <div class="col-sm-6 col-md-6 col-lg-6">
-        {% for definition in definitions %}
-        <div id="glossaryCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div id="avCarousel" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
-            <button type="button" data-bs-target="#glossaryCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#glossaryCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#glossaryCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#avCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#avCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#avCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="{{ url_for('static', filename='images/EI.jpg') }}" class="d-block w-100 img-fluid" height="300" width="300" alt="airbus A321">
+              <img src="{{ url_for('static', filename='images/EI.jpg') }}" class="d-block w-100 img-fluid carousel-img" alt="Airbus A321">
               <div class="carousel-caption d-none d-md-block">
-                <h5> {{ definition.definition_name }} </h5>
-                <p> {{ definition.definition_description }} </p>
-              </div>
-              {% endfor %}
-            </div>
-            <div class="carousel-item">
-              <img src="{{ url_for('static', filename='images/kaitak.jpg') }}" class="d-block w-100 img-fluid" height="300" width="300" alt="747 at Kai Tak">
-              <div class="carousel-caption d-none d-md-block">..
-                <h5>Second slide label</h5>
-                <p>Some representative placeholder content for the second slide.</p>
+                <h5>"WILCO"</h5>
+                <p>Short for 'Will Comply'. Used to indicate you will perform a requested action.</p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="{{ url_for('static', filename='images/EI.jpg') }}" class="d-block w-100 img-fluid" height="300" width="300" alt="...">
+              <img src="{{ url_for('static', filename='images/kaitak.jpg') }}" class="d-block w-100 img-fluid carousel-img" alt="Kai Tak airport">
               <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Some representative placeholder content for the third slide.</p>
+                <h5>"MAYDAY MAYDAY"</h5>
+                <p>Distress signal callsign. Used to indicate immediate and grave danger.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{{ url_for('static', filename='images/runway.jpg') }}" class="d-block w-100 img-fluid carousel-img" alt="Runway lights">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>MDA - Minimum Descent Altitude</h5>
+                <p>The lowest altitude specified in an instrument approach procedure to which descent is authorized without visual references for the runway.</p>
               </div>
             </div>
           </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#avCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#avCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-      </div>
-    </div>
-  </div>
 </section>
 
 {% endblock %}

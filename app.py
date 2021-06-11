@@ -112,13 +112,6 @@ def logout():
 def add_definition():
     if request.method == "POST":
         # check if definition already exists
-        existing_definition = mongo.db.definitions.find_one(
-            {"definition": request.form.get("definition")}
-        )
-        if existing_definition:
-            flash("This definition is already listed!")
-            return redirect(url_for("add_definition"))
-
         definition = {
             "category_name": request.form.get("category_name"),
             "definition_name": request.form.get("definition_name"),
@@ -157,7 +150,7 @@ def edit_definition(definition_id):
 @app.route("/delete_definition/<definition_id>")
 def delete_definition(definition_id):
     mongo.db.definitions.remove({"_id": ObjectId(definition_id)})
-    flash("Definition successfully deleted!")
+    flash("Definition deleted!")
     return redirect(url_for("glossary"))
 
 

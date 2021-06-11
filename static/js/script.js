@@ -15,8 +15,8 @@
   })();
 
 
-  // code to trigger alert message
+  // modal
 
-  function myAlert() {
-    alert("Congratulations! You've added a word to the glossary")
-  }
+  var myModal = new bootstrap.Modal(document.getElementById('myModal'), {
+    keyboard: true
+  })

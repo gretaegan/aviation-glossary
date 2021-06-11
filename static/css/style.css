@@ -63,7 +63,7 @@ body {
 /*-----Home Page*/
 
 .homepage-information {
-    padding-top: 22px;
+    padding-top: 32px;
     padding-bottom: 40px;
     text-align: center;
 }
@@ -97,11 +97,37 @@ body {
     left: 23%;
 }
 
+.info-text {
+    padding-top: 28px;
+}
+
 .hero-text h1 {
     letter-spacing: 3px;
     font-size: 52px;
     font-weight: 200;
 }
+
+#avCarousel {
+    padding-top: 22px;
+    padding-bottom: 22px;
+    width: 90%;
+}
+
+.carousel-img {
+    width: 90%;
+    height: 500px;
+
+}
+
+.info-page-options {
+    display: inline-block;
+}
+
+.heading-options {
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+
 
 /*----- Register */
 
@@ -133,6 +159,9 @@ body {
 
 /*-----Glossary */
 
+.glossary-page {
+    background-color: lightgrey;
+}
 
 
 .glossary-heading {
