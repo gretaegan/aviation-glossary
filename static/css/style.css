@@ -159,9 +159,6 @@ body {
 
 /*-----Glossary */
 
-.glossary-page {
-    background-color: lightgrey;
-}
 
 
 .glossary-heading {
@@ -216,7 +213,6 @@ body {
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    color: #fafafa;
 }
 
 .btn-custom {
