@@ -133,7 +133,7 @@ body {
 
 .register-container {
     height: 200px;
-    padding-bottom: 30px;
+    
 }
 
 .register-heading {
@@ -154,8 +154,10 @@ body {
 }
 
 .register-form {
-    padding-top: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
+
 
 /*-----Glossary */
 
@@ -233,6 +235,10 @@ body {
 .login-container {
     padding-top: 60px;
     padding-bottom: 60px;
+    background-image: url(../images/wallpaper.jpg);
+    height: 200px;
+    background-size: cover;
+
 }
 
 
@@ -249,14 +255,6 @@ body {
     padding-top: 50px;
 }
 
-.register-page {
-    background-image: url(../images/wallpaper.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    object-fit: cover;
-    background-position: center;
-    height: 100%;
-}
 
 
 /*-----User Dashboard*/

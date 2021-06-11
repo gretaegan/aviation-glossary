@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section class="register-page">
-
     <!-- flash messages -->
     <section>
         <div class="container">
@@ -27,8 +25,8 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-sm-12 login-container">
-                    <h2 class="login-heading"> Log In </h2>
                 </div>
+                <h2 class="login-heading"> Log In </h2>
                 <!-- form -->
                 <form method="POST" action="{{ url_for('login') }}" class="needs-validation login-form" novalidate>
                     <div class="mb-3">
@@ -53,6 +51,5 @@
                 </div>
             </div>
         </div>
-    </section>
 </section>
 {% endblock %}

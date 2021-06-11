@@ -1,3 +1,5 @@
+// Code to validate form taken from Bootstrap docs
+
 (function() {
     'use strict';
     window.addEventListener('load', function() {
@@ -15,8 +17,4 @@
   })();
 
 
-  // modal
-
-  var myModal = new bootstrap.Modal(document.getElementById('myModal'), {
-    keyboard: true
-  })
+  // To initialize Modal 
