@@ -39,12 +39,14 @@
                 maxlength="100" aria-describedby="definitionName" required>
             </div>
             <div class="mb-3">
-              <select class="form-select validate" id="category_name" aria-label="select">
+              <select class="form-select validate" id="category_name" name="category_name" aria-label="select">
                 <label for="category_name" id="category_name" name="category_name"">Category</label>
             <option selected> Pick a category </option>
             {% for category in categories %}
-             <option value=" {{ category.category_name }}">{{ category.category_name }}</option>
-                  {% endfor %}
+                <option value=" {{ category.category_name }}">
+                  {{ category.category_name }}
+                </option>
+            {% endfor %}
               </select>
             </div>
             <div class="mb-3">
