@@ -3,55 +3,56 @@
 
 <section class="register-page">
 
-<!-- flash messages -->
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 flash-container">
-                {% with messages = get_flashed_messages() %}
+    <!-- flash messages -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 flash-container">
+                    {% with messages = get_flashed_messages() %}
                     {% if messages %}
-                       {% for message in messages %}
-                          <div class="message-row">
-                              {{ message }}
-                          </div>
-                       {% endfor %}
-                    {% endif %} 
-                {% endwith %}
+                    {% for message in messages %}
+                    <div class="message-row">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
-<section class="login-page">
-<div class="container">
-        <div class="row">
-            <div class="col-lg-3"></div>
-            <div class="col-lg-6 login-container">
-                <h2 class="login-heading"> Log In </h2>
-            </div>
-            <!-- form -->
+    <section class="login-page">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 login-container">
+                    <h2 class="login-heading"> Log In </h2>
+                </div>
+                <!-- form -->
                 <form method="POST" action="{{ url_for('login') }}" class="needs-validation login-form" novalidate>
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
-                        <input type="text" name="username" class="form-control" id="username" minlength="4" maxlength="12" pattern="^[a-zA-Z0-9]{2,12}$" required>
-                        </div>
+                        <input type="text" name="username" class="form-control" id="username" minlength="4"
+                            maxlength="12" pattern="^[a-zA-Z0-9]{2,12}$" required>
+                    </div>
                     <div class="mb-3">
-                    <label for="password" class="form-label"></label>Enter Password</label>
-                    <input type="password" name="password" class="form-control" id="password" minlength="4" maxlength="12" pattern="^[a-zA-Z0-9]{2,12}$" required>
+                        <label for="password" class="form-label"></label>Enter Password</label>
+                        <input type="password" name="password" class="form-control" id="password" minlength="4"
+                            maxlength="12" pattern="^[a-zA-Z0-9]{2,12}$" required>
                     </div>
                     <button type="submit" class="btn btn-hover">Log In</button>
                 </form>
-    </div>
-    <div class="col-lg-3"></div>
-    <div class="row">
-        <div class="col-sm-12 register-reminder">
-            <p>
-                Don't have an account yet? <a href="{{ url_for('register') }}" class="btn btn-hover"> Register Here! </a>
-            </p>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 register-reminder">
+                    <p>
+                        Don't have an account yet? <a href="{{ url_for('register') }}" class="btn btn-hover"> Register
+                            Here! </a>
+                    </p>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-</section>
+    </section>
 </section>
 {% endblock %}

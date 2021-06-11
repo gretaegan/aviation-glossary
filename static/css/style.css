@@ -283,23 +283,27 @@ body {
     font-family: 'Raleway',sans-serif;
     margin: auto;
     text-align: center;
+    font-size: 42px;
+    letter-spacing: 2px;
 }
 
 .username-heading {
     text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 48px;
+    padding-bottom: 32px;
 }
 
 .username-box {
-    background-color: #9bd3dd;
+    background-image: url(../images/wallpaper.jpg);
+    background-size: cover;
+    height: 200px;
     text-shadow: 2px;
 }
 
 .icon-fa {
     color: #9bd3dd;
     padding-top: 38px;
-    padding-bottom: 38px;
+    padding-bottom: 32px;
 }
 
 .icon-fa:hover {
@@ -336,6 +340,14 @@ body {
 .add-text {
     text-align: center;
     padding-bottom: 32px;
+}
+
+.edit-header {
+    padding-top: 52px;
+    text-align: center;
+    padding-bottom: 28px;
+    text-transform: uppercase;
+
 }
 
 /*-----Flash Messages */

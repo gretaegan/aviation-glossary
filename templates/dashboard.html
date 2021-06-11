@@ -8,13 +8,13 @@
         <div class="row">
             <div class="col-sm-12 flash-container">
                 {% with messages = get_flashed_messages() %}
-                    {% if messages %}
-                       {% for message in messages %}
-                          <div class="message-row">
-                              {{ message }}
-                          </div>
-                       {% endfor %}
-                    {% endif %} 
+                {% if messages %}
+                {% for message in messages %}
+                <div class="message-row">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
                 {% endwith %}
             </div>
         </div>
@@ -25,10 +25,10 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12 username-box">
-                <h2 class="username-profile">
-                   Hi {{ username }}
-                </h2>
-                <hr class="new-hr">
+            <h2 class="username-profile">
+                Hello {{ username }}
+            </h2>
+            <hr class="new-hr">
         </div>
         <div class="row">
             <div class="col-12">
