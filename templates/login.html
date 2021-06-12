@@ -27,6 +27,14 @@
                 <div class="col-sm-12 login-container">
                 </div>
                 <h2 class="login-heading"> Log In </h2>
+                <div class="row">
+                    <div class="register-reminder">
+                        <p>
+                            Don't have an account yet? <a href="{{ url_for('register') }}" class="btn btn-hover"> Register
+                                Here! </a>
+                        </p>
+                    </div>
+                </div>
                 <!-- form -->
                 <form method="POST" action="{{ url_for('login') }}" class="needs-validation login-form" novalidate>
                     <div class="mb-3">
@@ -41,14 +49,6 @@
                     </div>
                         <button type="submit" class="btn btn-hover">Log In</button>
                 </form>
-            </div>
-            <div class="row">
-                <div class="register-reminder">
-                    <p>
-                        Don't have an account yet? <a href="{{ url_for('register') }}" class="btn btn-hover"> Register
-                            Here! </a>
-                    </p>
-                </div>
             </div>
         </div>
 </section>
