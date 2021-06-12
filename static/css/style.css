@@ -380,4 +380,9 @@ body {
     background-color:#021752;
     color: #9bd3dd;
     flex-shrink: 0;
+    padding-top: 24px;
+}
+
+.footer-text {
+    font-size: 12px;
 }
