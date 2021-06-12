@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section class="glossary-page">
-
 
 <!-- flash messages -->
 <section>
@@ -24,10 +22,10 @@
 </section>
 
   <section>
-    <!-- heading -->
+  <!-- heading -->
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 glossary-heading">
+            <div class="col-sm-12 glossary-banner glossary-heading">
                 <h1> Glossary </h1>
                 <p> Search for a word below:</p>
             </div>
@@ -38,8 +36,8 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-3"></div>
-     <div class="col-lg-6">
-      <form action="{{ url_for('glossary') }}" method="GET" class="search-box">
+     <div class="col-lg-6 search-box">
+      <form action="{{ url_for('glossary') }}" method="GET">
         <div class="form-row">
           <div class="form-group">
             <label for="query">Search</label>
@@ -88,7 +86,7 @@
             </p>
             {% if session.user|lower == definition.created_by|lower %}
             <div class="card-end text-center">
-              <a href="{{ url_for('edit_definition', definition_id=definition._id) }}" class="btn btn-outline btn-edit">Edit</a>
+              <a href="{{ url_for('edit_definition', definition_id=definition._id) }}" class="btn btn-hover btn-edit">Edit</a>
               <button type="button" class="btn btn-hover" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Delete
               </button>
@@ -128,11 +126,10 @@
     <div class="col-sm-12 end-info">
       <p> Want to add a definition or phrase of your own? <br>
         Click to 
-      <a href="{{ url_for('login') }}" class="btn btn-custom">Login</a> or
-      <a href="{{ url_for('register') }}" class="btn btn-custom">Register</a>! </p>
+      <a href="{{ url_for('login') }}" class="btn btn-hover">Login</a> or
+      <a href="{{ url_for('register') }}" class="btn btn-hover">Register</a></p>
     </div>
   </div>
 </div>
-</section>
 </section>
 {% endblock %}
