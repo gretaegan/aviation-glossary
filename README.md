@@ -319,6 +319,56 @@ To test database functionality for the project:
 - Check to see if the post is correctly removed from posts collection in MongoDB.
 
 
+A link to a PDF of my sample testing can be found [Here](link will go here)
+
+### Project Input Field Testing 
+
+- Input fields correctly restrict user input when maximum/minimum character count is met.
+- Input fields correctly display an error if user attempts to you special charcaters.
+
+
+### Lighthouse Performance 
+
+### Code Validators
+
+- HTML results can be found [here]()
+
+### Further Testing 
+
+The following browsers were used to test the project:
+
+- Google Chrome
+- Mozilla Firefox
+- Microsoft Edge The project passed all tests on the browsers listed above.
+- Google Chrome Developer tools was used to test the resposiveness of the project on the following emulated devices:
+
+Apple Ipad
+Apple Ipad Pro
+Microsoft Surface Duo
+Iphone 5/SE
+Iphone 6/7/8
+Iphone 6/7/8 PLUS
+Iphone X
+
+Real world testing was done on my own laptop and phone:
+
+- Dell G7 17.3" Full HD 144Hz
+- iPhone 11
+
+
+### Known Bugs and Fixes
+
+- The hero image on the homepage does not fully fit the screen, leaving a small amount of whitespace on either side.
+  I have identified the issue in Chrome Dev Tools:
+     - Padding-right: var(bs gutter x, .75rem)
+     - Padding-left: var (bs gutter x, .75rem)
+
+- When a user tried to edit a definition their was no value in the definition field that appeared in the glossary.
+  This was due to a mismatch of input id's on the form, which has since been fixed.
+
+- Edit and Delete buttons were showing, in the glossary, for all users who were not logged in. It is intended that only users who created a definition would be able
+  to see and use these buttons. This was fixed by adding a "created_by": to all documents in the database and ensuring that all had a value.
+
 
 
 # **Deployment** # 

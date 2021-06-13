@@ -5,72 +5,77 @@
 <!-- flash messages -->
 <section>
   <div class="container">
-      <div class="row">
-          <div class="col-sm-12 flash-container">
-              {% with messages = get_flashed_messages() %}
-                  {% if messages %}
-                     {% for message in messages %}
-                        <div class="message-row">
-                            {{ message }}
-                        </div>
-                     {% endfor %}
-                  {% endif %} 
-              {% endwith %}
-          </div>
+    <div class="row">
+      <div class="col-sm-12 flash-container">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="message-row">
+          {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
       </div>
+    </div>
   </div>
 </section>
 
-  <section>
+<section>
   <!-- heading -->
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 glossary-banner glossary-heading">
-                <h1> Glossary </h1>
-                <p> Search for a word below:</p>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 glossary-banner glossary-heading">
+        <h1> Glossary </h1>
+        <p> Search for a word below:</p>
+      </div>
     </div>
+  </div>
 
-<!-- search box -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-3"></div>
-     <div class="col-lg-6 search-box">
-      <form action="{{ url_for('glossary') }}" method="GET">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="query">Search</label>
-            <input type=text" name="query" class="form-control form-box" id="query" placeholder="Word or definition">
-            <div class="buttons">
-              <button type="submit" class="btn btn-lg btn-info btn-search"><i class="fas fa-search"></i></button>
-              <a href="{{ url_for('glossary') }}" class="btn btn-lg btn-info btn-reset"> Reset</a>
+  <!-- search box -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+
+      </div>
+      <div class="col-lg-6 search-box">
+        <form action="{{ url_for('glossary') }}" method="GET">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="query">Search</label>
+              <input type=text" name="query" class="form-control form-box" id="query" placeholder="Word or definition">
+              <div class="buttons">
+                <button type="submit" class="btn btn-lg btn-info btn-search" sr-only="search button"><i
+                    class="fas fa-search"></i></button>
+                <a href="{{ url_for('glossary') }}" class="btn btn-lg btn-info btn-reset"> Reset</a>
+              </div>
             </div>
           </div>
-        </div>
-     </div>
-    </form>
-    <div class="col-lg-3"></div>
-  </div>
-</div>
+      </div>
+      </form>
+      <div class="col-lg-3">
 
-  
-<!-- start of glossary -->
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-3">
+      </div>
     </div>
-    <div class="col-lg-6">
-      <div class="glossary-card">
-        {% for definition in definitions %}
-        <h5 class="card-header">
+  </div>
+
+
+  <!-- start of glossary -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3">
+      </div>
+      <div class="col-lg-6">
+        <div class="glossary-card">
+          {% for definition in definitions %}
+          <h5 class="card-header">
             {{ definition.definition_name }}</h5>
           <div class="card-body">
             <h5 class="card-title">
-                <em>
-                  Definition:
-                </em>
-                {{ definition.definition_description }}
+              <em>
+                Definition:
+              </em>
+              {{ definition.definition_description }}
             </h5>
             <p class="card-text">
               <em>
@@ -86,50 +91,51 @@
             </p>
             {% if session.user|lower == definition.created_by|lower %}
             <div class="card-end text-center">
-              <a href="{{ url_for('edit_definition', definition_id=definition._id) }}" class="btn btn-hover btn-edit">Edit</a>
+              <a href="{{ url_for('edit_definition', definition_id=definition._id) }}"
+                class="btn btn-hover btn-edit">Edit</a>
               <button type="button" class="btn btn-hover" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Delete
               </button>
             </div>
             {% endif %}
           </div>
-        {% endfor %}
-     </div>
-    </div>
-    <div class="col-lg-3"></div>
-  </div>
-</div>
-
-<!-- modal -->
-{% for definition in definitions %}
-     {% if session.user|lower == definition.created_by|lower %}
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete this?</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <a href="{{ url_for('delete_definition', definition_id=definition._id) }}" class="btn btn-hover">Delete</a>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
         </div>
-     {% endif %}
-{% endfor %}
-
-<!-- end of page info -->
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12 end-info">
-      <p> Want to add a definition or phrase of your own? <br>
-        Click to 
-      <a href="{{ url_for('login') }}" class="btn btn-hover">Login</a> or
-      <a href="{{ url_for('register') }}" class="btn btn-hover">Register</a></p>
+      </div>
+      <div class="col-lg-3"></div>
     </div>
   </div>
-</div>
+
+  <!-- modal -->
+  {% for definition in definitions %}
+  {% if session.user|lower == definition.created_by|lower %}
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete this?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a href="{{ url_for('delete_definition', definition_id=definition._id) }}" class="btn btn-hover">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+
+  <!-- end of page info -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 end-info">
+        <p> Want to add a definition or phrase of your own? <br>
+          Click to
+          <a href="{{ url_for('login') }}" class="btn btn-hover">Login</a> or
+          <a href="{{ url_for('register') }}" class="btn btn-hover">Register</a></p>
+      </div>
+    </div>
+  </div>
 </section>
 {% endblock %}
