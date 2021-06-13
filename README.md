@@ -445,7 +445,7 @@ Once the project has been loaded please run the following command in the CLI to 
 
 # Acknowledgments
 
-- Ouluwafemi Medale, my mentor who has provided me with so much help and from whom I have learned so much. I would not have gotten this far in the course without him.
+- Oluwafemi Medale, my mentor who has provided me with so much help and from whom I have learned so much. I would not have gotten this far in the course without him.
 
 - Code Institute Tutor team. The tutor team, with special thanks to Jo, have helped me to find solutions to issues I had with the project and were always super kind.
 
