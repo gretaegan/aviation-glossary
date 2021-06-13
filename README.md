@@ -333,6 +333,13 @@ A link to a PDF of my sample testing can be found [Here](link will go here)
 
 - HTML results can be found [here]()
 
+-CSS results cam be found [here](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Faviation-glossary.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+ The CSS validator returned a number of errors and warnings however they are all from Bootstrap and Font Awesome and none from my own code.
+
+
+- Javascript was run through JSHint.com and returned no issues.
+
+
 ### Further Testing 
 
 The following browsers were used to test the project:
@@ -424,4 +431,24 @@ Once the project has been loaded please run the following command in the CLI to 
 
 
 # Credits 
- 
+
+- Code Institute. The backend section of my project was built upon the Mini-project walkthrough project. I relied on this to create my own 
+   backend section.
+
+- Bootstrap. I referenced the Bootstrap documents often thoughout my project, and used it to create the Carousel, Forms, Modal, layout and responsive Navbar.
+
+- Media. Images were taken from:
+  reference here 
+
+- Content. Content from the gallery was taken from Skybrary.aero and my own knowledge from flight school. 
+
+
+# Acknowledgments
+
+- Ouluwafemi Medale, my mentor who has provided me with so much help and from whom I have learned so much. I would not have gotten this far in the course without him.
+
+- Code Institute Tutor team. The tutor team, with special thanks to Jo, have helped me to find solutions to issues I had with the project and were always super kind.
+
+- Captain Andy O'Shea and the rest of the Airline Pilot Club, for providing me with invaluably useful content for the glossary, and lots of encouragement to create the project.
+
+- Harry Dhillon, for always being the person I always turn to when I am struggling, always going above and beyond to help, and always offering encouragement.

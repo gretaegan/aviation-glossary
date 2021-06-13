@@ -19,9 +19,10 @@
 
 // Scroll button to top of page - code help from w3schools
 
-var scrollButton = document.getElementById("scrollBtn")
+var scrollButton = document.getElementById("scrollBtn");
 
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function() {scrollFunction();
+};
 
 function scrollFunction() {
   if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
