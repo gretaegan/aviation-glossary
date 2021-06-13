@@ -287,7 +287,7 @@ The following testing has been done on this project:
 
 ### User Story Testing 
 
- | **Annonymous User Goals ** : |  ** Supporting Features**  : | **Outcome** : |
+ | **Annonymous User Goals ** : |  ** Supporting Features**  : | 
 | ------------- |:-------------:|
 | easily understand the main purpose of the site | Homepage has an aviation related image and informative text  | PASS |
 | use an aesthetically pleasing site| Design is consistent and fitting with the theme, colors are pleasant and calm | PASS |
@@ -297,7 +297,7 @@ The following testing has been done on this project:
 | view/search words and definitions | The glossary is simple and informative and shows all definitions in a list | PASS |
 
 
-| **As a registered user I would like to ** : |  **In addition to the above goals**  : | **Outcome** : |
+| **As a registered user I would like to ** : |  **In addition to the above goals**  : | 
 | ------------- |:-------------:|
 | upload my own definitions or words | Users can add their own words once signed up and view in the glossary | PASS |
 | edit and delete content I have provided | Users can see edit/delete buttons for their own definitions and they function as intended | PASS |
@@ -439,6 +439,10 @@ Once the project has been loaded please run the following command in the CLI to 
 
 - Media. Images were taken from:
   reference here 
+
+-W3Schools. The code for my scroll to the top button was referenced from their tutorial.
+
+- Geeksforgeeks.org. The code to fade in the hero image small text was referenced from their tutorial.
 
 - Content. Content from the gallery was taken from Skybrary.aero and my own knowledge from flight school. 
 
