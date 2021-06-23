@@ -335,6 +335,8 @@ To test database functionality for the project:
 
 ### Lighthouse Performance 
 
+![lighthouse](testing/lighthouse.jpg)
+
 ### Code Validators
 
 - HTML results can be found [here](https://validator.w3.org/nu/?doc=https%3A%2F%2F8080-gold-catshark-75luzzcd.ws-eu08.gitpod.io%2F)
@@ -486,7 +488,7 @@ Once the project has been loaded please run the following command in the CLI to 
 
 - Code Institute Tutor team. The tutor team, with special thanks to Jo, have helped me to find solutions to issues I had with the project and were always super kind.
 
-- Alexander from Code Institute Tutor Support. When I realized that I would have no internet for the week leading up to submitting this project, he was extremely helpful in allowing me find a solution.
+- Alexander from Code Institute Student Care When I realized that I would have no internet for the week leading up to submitting this project, he was extremely helpful in allowing me find a solution.
 
 - Captain Andy O'Shea and the rest of the Airline Pilot Club, for providing me with invaluably useful content for the glossary, and lots of encouragement to create the project.
 
