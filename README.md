@@ -1,8 +1,13 @@
 # Aviation Glossary
 
-! mock up will go here 
+![mockup](testing/mockup.jpg)
 
 ## Introduction
+
+** Please read: 
+   There is a huge bug in my code that I have only identified now, just as I am about to submit this project. The homepage has an enourmous amount of whitespace on smaller screen sizes. This bug has never happened before until now and I have no time
+   to find out what is happening or why. I have been testing this project consistently on small screen sizes since I began it and not once has this issue happened until now.
+   I have no choice but to submit anyway as I have run out of time and am already submitting late due to issues discussed with Student Care. Please see Bugs/Fixes section for more detail. Thank you **
 
 Welcome to Aviation Glossary. 
 This was created for my third project as part of the Code Institute, Full Stack software development course. 
@@ -367,6 +372,9 @@ Real world testing was done on my own laptop and phone:
 
 ### Known Bugs and Fixes
 
+** Bug discussed at beginning of README ** 
+- On smaller screen sizes, the entire homepage is condensed into the padding 336 x 600 which is obviously completely unintended. I have identifed the issue has being the use of  position absolute and position relative on my hero image and container. I am a couple of minutes away from my project submission deadline which is already late due to personal issues discussed with Student Care, so I do not have time to properly find the issue and fix this. It seems that if I remove the hero-text the problem lessens so I have chosen to do that. This means my homepage obviously looks uncomplete and unfinished and I wish I had more time to find an issue. The whole time I have been working on this project it has not happened before. 
+
 - The hero image on the homepage does not fully fit the screen, leaving a small amount of whitespace on either side.
   I have identified the issue in Chrome Dev Tools:
      - Padding-right: var(bs gutter x, .75rem)
@@ -464,12 +472,10 @@ Once the project has been loaded please run the following command in the CLI to 
 
 - Bootstrap. I referenced the Bootstrap documents often thoughout my project, and used it to create the Carousel, Forms, Modal, layout and responsive Navbar.
 
-- Media. Images were taken from:
-  reference here 
+- Media. Images were taken from Google.
 
--W3Schools. The code for my scroll to the top button was referenced from their tutorial.
+- W3Schools. The code for my scroll to the top button was referenced from their tutorial.
 
-- Geeksforgeeks.org. The code to fade in the hero image small text was referenced from their tutorial.
 
 - Content. Content from the gallery was taken from Skybrary.aero and my own knowledge from flight school. 
 

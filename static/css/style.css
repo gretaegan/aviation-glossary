@@ -52,7 +52,7 @@ body {
 
 
 .btn-hover {
-    background-color: hsl(189, 96%, 67%);
+    background-color: #9bd3dd;
 }
 
 .btn-hover:hover {
@@ -89,23 +89,9 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     height: 600px;
-    width: 100%;
-    padding-right: 0;
-    padding-left: 0;
-    position: relative;
+    max-width: 100%;
 }
 
-.hero-text {
-    color: #fafafa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    color: hsl(189, 96%, 67%);
-    position: absolute;
-    top: 31%;
-    left: 23%;
-}
 
 .info-text {
     padding-top: 28px;
