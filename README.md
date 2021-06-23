@@ -282,8 +282,7 @@ The following testing has been done on this project:
 - User Story Testing
 - Lighthouse Performance Testing
 - CRUD Functionality Testing
-- Project Input Field Testing
-- HTML / CSS / JavaScript / Python all checked with validators.
+- HTML / CSS / JavaScript validators.
 
 ### User Story Testing 
 
@@ -318,8 +317,10 @@ To test database functionality for the project:
    Delete the post.
 - Check to see if the post is correctly removed from posts collection in MongoDB.
 
+![crud](testing/crud1.jpg)
+![crud](testing/crud-2.jpg)
+![crud](testing/crud-3.jpg)
 
-A link to a PDF of my sample testing can be found [Here](link will go here)
 
 ### Project Input Field Testing 
 
