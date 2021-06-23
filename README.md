@@ -332,9 +332,10 @@ To test database functionality for the project:
 
 ### Code Validators
 
-- HTML results can be found [here]()
+- HTML results can be found [here](https://validator.w3.org/nu/?doc=https%3A%2F%2F8080-gold-catshark-75luzzcd.ws-eu08.gitpod.io%2F)
+No errors or warnings were returned.
 
--CSS results cam be found [here](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Faviation-glossary.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+- CSS results cam be found [here](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Faviation-glossary.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
  The CSS validator returned a number of errors and warnings however they are all from Bootstrap and Font Awesome and none from my own code.
 
 
@@ -371,11 +372,36 @@ Real world testing was done on my own laptop and phone:
      - Padding-right: var(bs gutter x, .75rem)
      - Padding-left: var (bs gutter x, .75rem)
 
+- The footer does not stick to the bottom of the screen on the register page or the dashboard. This issue happened at the start of my project and I solved it by 
+adding the following code:
+
+html, body {
+    height: 100%;
+}
+
+body {
+
+    font-family: 'Raleway',sans-serif;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+.content {
+    flex: 1 0 auto;
+}
+
+This code fixed the issue, until now. As I am about to reach the submission deadline I do not have time to find the problem and fix it further.
+
 - When a user tried to edit a definition their was no value in the definition field that appeared in the glossary.
   This was due to a mismatch of input id's on the form, which has since been fixed.
 
 - Edit and Delete buttons were showing, in the glossary, for all users who were not logged in. It is intended that only users who created a definition would be able
   to see and use these buttons. This was fixed by adding a "created_by": to all documents in the database and ensuring that all had a value.
+
+- As mentioned in the CRUD section, there is a bug with my redirect code. The site does not redirect the user directly to the dashboard once they have logged in. It also does not redirect the user to the definition they are editing when they choose to edit their definition. This is bad UX and I am unhappy with it, however I am extremely limited by
+time contstraints on this project so I have chosen to instead write it up here. Phase 2 release of this project would include these features functioning as intended.
 
 
 
@@ -453,6 +479,8 @@ Once the project has been loaded please run the following command in the CLI to 
 - Oluwafemi Medale, my mentor who has provided me with so much help and from whom I have learned so much. I would not have gotten this far in the course without him.
 
 - Code Institute Tutor team. The tutor team, with special thanks to Jo, have helped me to find solutions to issues I had with the project and were always super kind.
+
+- Alexander from Code Institute Tutor Support. When I realized that I would have no internet for the week leading up to submitting this project, he was extremely helpful in allowing me find a solution.
 
 - Captain Andy O'Shea and the rest of the Airline Pilot Club, for providing me with invaluably useful content for the glossary, and lots of encouragement to create the project.
 
