@@ -216,12 +216,6 @@ Once I have become more competant with Python and have more time on my side, I w
 - A feature to stop incorrect definitions being uploaded.
 
 
-## The Skeleton Plane 
-
-Figma was used to create the wireframes for this project and they can be found 
-
-discus changes from your project.
-
 ## The Surface Plane 
 
 Features included in this project :
